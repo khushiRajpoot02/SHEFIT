@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654587682442",
+    "project_id": "shefit-d8269",
+    "storage_bucket": "shefit-d8269.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654587682442:android:37539f055e4363b57e5773",
+        "android_client_info": {
+          "package_name": "com.shefit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBWV2FTIezACVtFF52uTGn8KZotUw0akQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
