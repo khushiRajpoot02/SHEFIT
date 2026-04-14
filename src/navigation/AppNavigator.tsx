@@ -4,6 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../features/auth/screens/HomeScreen";
 import { useAuth } from "../hooks/useAuth";
 import { ActivityIndicator } from "react-native";
+import WorkoutNavigation from "./WorkoutsNavigation";
+
+
 const AppNavigator = ()=>{
 
     const {logout, loading} = useAuth();
@@ -27,6 +30,8 @@ return (
                 ></HomeScreen>
             )}
             </Tab.Screen>
+
+            <Tab.Screen name="Workout" component={WorkoutNavigation}/>
     </Tab.Navigator>
   )
 }

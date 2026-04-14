@@ -1,6 +1,7 @@
 import { Button, Text, View } from "react-native"
-import NativeGymGirlDeviceInfo from "../../../native/NativeGymGirlDeviceInfo";
+// import NativeGymGirlDeviceInfo from "../../../native/NativeGymGirlDeviceInfo";
 import { useEffect, useState } from "react";
+import { seedWorkouts } from "../../../script/seedWorkouts";
 
  type homescreenProp = {
     handleLogout :()=> void,
@@ -11,27 +12,30 @@ const[deviceInfo, setDeviceInfo] = useState({
  model:'',
  version:'',
  isEmulator:true,
-
 });
-
 useEffect(()=>{
-    const loadDeviceInfo = async()=>{
-        const model = await NativeGymGirlDeviceInfo.getDeviceModel();
-        const version = await NativeGymGirlDeviceInfo.getSystemVersion();
-        const emulator = await NativeGymGirlDeviceInfo.isEmulator();
-        setDeviceInfo(prev=>({
-            ...prev,
-            model : model,
-            version:version,
-            isEmulator: emulator
-        }))   
-        console.log("modalllll",model);    // "vivo V2030"
-        console.log("versionnnn",version);  // "14"
-        console.log("emulator",emulator); // false
-    };
-    loadDeviceInfo();
+    // seedWorkouts();
+    console.log("----");
+}, []);
 
-}, [])
+// useEffect(()=>{
+//     const loadDeviceInfo = async()=>{
+//         const model = await NativeGymGirlDeviceInfo.getDeviceModel();
+//         const version = await NativeGymGirlDeviceInfo.getSystemVersion();
+//         const emulator = await NativeGymGirlDeviceInfo.isEmulator();
+//         setDeviceInfo(prev=>({
+//             ...prev,
+//             model : model,
+//             version:version,
+//             isEmulator: emulator
+//         }))   
+//         console.log("modalllll",model);    // "vivo V2030"
+//         console.log("versionnnn",version);  // "14"
+//         console.log("emulator",emulator); // false
+//     };
+//     loadDeviceInfo();
+
+// }, [])
     return(
         <View><Text>Welcom to home screen</Text>
         
