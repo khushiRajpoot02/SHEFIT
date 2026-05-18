@@ -7,29 +7,15 @@ import {
   Image,
 } from 'react-native';
 import { colours, spacing, fontSizes, fontWeights, radius, shadows } from '../../../theme';
+import { WorkoutPlan } from '../../../types';
 
-export type WorkoutLevel = 'beginner' | 'intermediate' | 'advanced';
-
-export type WorkoutPlan = {
-  id: string;
-  title: string;
-  description: string;
-  level: WorkoutLevel;
-  category: string;
-  durationMins: number;
-  caloriesBurn: number;
-  thumbnailUrl?: string;
-  tags: string[];
-  exercises: any[];
-  createdAt: string;
-};
 
 interface WorkoutPlanCardProps {
   plan: WorkoutPlan;
   onPress: (plan: WorkoutPlan) => void;
 }
 
-const LEVEL_COLORS: Record<WorkoutLevel, string> = {
+const LEVEL_COLORS = {
   beginner: colours.success,
   intermediate: colours.primary,
   advanced: colours.error,
@@ -79,7 +65,7 @@ export const WorkoutPlanCard: React.FC<WorkoutPlanCardProps> = ({ plan, onPress 
         <View style={styles.statsRow}>
           <View style={styles.stat}>
             <Text style={styles.statIcon}>⏱</Text>
-            <Text style={styles.statText}>{plan.durationMins} mins</Text>
+            <Text style={styles.statText}>{plan.durationInMinutes} mins</Text>
           </View>
           <View style={styles.statDivider} />
           <View style={styles.stat}>
@@ -89,7 +75,7 @@ export const WorkoutPlanCard: React.FC<WorkoutPlanCardProps> = ({ plan, onPress 
           <View style={styles.statDivider} />
           <View style={styles.stat}>
             <Text style={styles.statIcon}>💪</Text>
-            <Text style={styles.statText}>{plan.exercises.length} exercises</Text>
+            <Text style={styles.statText}>{plan.excercises.length} exercises</Text>
           </View>
         </View>
       </View>

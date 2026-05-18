@@ -8,11 +8,11 @@ import { seedWorkouts } from "../../../script/seedWorkouts";
  }
 const HomeScreen = ({handleLogout}:homescreenProp)=>{
 
-const[deviceInfo, setDeviceInfo] = useState({
- model:'',
- version:'',
- isEmulator:true,
-});
+// const[deviceInfo, setDeviceInfo] = useState({
+//  model:'',
+//  version:'',
+//  isEmulator:true,
+// });
 useEffect(()=>{
     // seedWorkouts();
     console.log("----");

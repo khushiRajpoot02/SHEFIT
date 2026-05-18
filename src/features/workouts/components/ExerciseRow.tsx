@@ -1,25 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colours, spacing, fontSizes, fontWeights, radius } from '../../../theme';
+import {WorkoutExcercise} from '../../../types/index';
 
-export type WorkoutExercise = {
-  exercise: {
-    id: string;
-    name: string;
-    muscleGroups: string[];
-    equipment: string;
-    instructions: string[];
-  };
-  order: number;
-  sets: number;
-  reps?: number;
-  duration?: number;  // seconds, for timed exercises
-  restTime: number;
-  notes?: string;
-};
 
 interface ExerciseRowProps {
-  item: WorkoutExercise;
+  item: WorkoutExcercise;
   isLast?: boolean;
 }
 
@@ -37,11 +23,11 @@ export const ExerciseRow: React.FC<ExerciseRowProps> = ({ item, isLast }) => {
 
       {/* Exercise info */}
       <View style={styles.info}>
-        <Text style={styles.name}>{item.exercise.name}</Text>
+        <Text style={styles.name}>{item.excercises.name}</Text>
 
         {/* Muscle groups */}
         <View style={styles.tagsRow}>
-          {item.exercise.muscleGroups.map(m => (
+          {item.excercises.muscelGroups.map(m => (
             <View key={m} style={styles.muscleTag}>
               <Text style={styles.muscleTagText}>{m}</Text>
             </View>

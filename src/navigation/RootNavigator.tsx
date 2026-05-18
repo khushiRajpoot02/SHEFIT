@@ -7,6 +7,8 @@ import { useBiometricAuth } from "../hooks/useBiometricAuth";
 import { useState } from "react";
 import BiometricGateScreen from "../features/auth/screens/BiometricGateScreen";
 import { logout } from "../services/auth";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 const RootNavigator = () => {
 
     console.log("entered inside root");
@@ -33,9 +35,12 @@ const RootNavigator = () => {
         return <AppNavigator />
     }
     return (
-        <NavigationContainer>
-            {renderContent()
-            }   </NavigationContainer>
+        <SafeAreaProvider>
+            <NavigationContainer>
+                {renderContent()}
+                {/* <AuthNavigator/> */}
+            </NavigationContainer>
+        </SafeAreaProvider>
     )
 }
 export default RootNavigator;

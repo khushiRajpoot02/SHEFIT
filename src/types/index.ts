@@ -1,4 +1,4 @@
-type Excercise = {
+export type Excercise = {
     id: string,
     name: string,
     description : string,
@@ -8,7 +8,7 @@ type Excercise = {
     thumbnailUrl:string,
     instructions:string[],
 }
-type WorkoutExcercise = {
+export type WorkoutExcercise = {
     excercises: Excercise,
     order: number,
     sets: number,
@@ -17,11 +17,11 @@ type WorkoutExcercise = {
     restTime: number,
     notes?: string
 } 
-type WorkoutPlan={
+export type WorkoutPlan={
     id: string,
     title:string,
     description:string,
-    level:'beginer' | 'intermediate' | 'advanced',
+    level:'beginner' | 'intermediate' | 'advanced',
     category: string,
     durationInMinutes : number,
     caloriesBurn : number,
@@ -30,7 +30,7 @@ type WorkoutPlan={
     tags:string[],
     createdAt:string
 }
-type ActiveWorkoutSession = {
+export type ActiveWorkoutSession = {
     plan: WorkoutPlan,
     currentExcerciseIndex: number,
     currentSet: number,
@@ -39,7 +39,7 @@ type ActiveWorkoutSession = {
     startedAt: number,
     completedExcerciseIndex: number
 }
-type Wrokoutlogs = {
+export type Wrokoutlogs = {
     id: string,
     userId: string,
     planId: string,
@@ -51,6 +51,3 @@ type Wrokoutlogs = {
     caloriesBurned: number
 }
 
-// till 10 complete this
-// how will I access this ?
-// git pe push kr and vhaa jake khud se try krte h 
